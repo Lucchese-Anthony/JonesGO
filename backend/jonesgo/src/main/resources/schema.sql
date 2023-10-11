@@ -1,0 +1,77 @@
+SET ANSI_NULLS ON
+
+GO
+
+SET QUOTED_IDENTIFIER ON
+
+GO
+
+CREATE TABLE [dbo].[TA_Users_Points](
+
+[point_user_id] [int] IDENTITY(1,1) NOT NULL,
+
+[point_id] [int] NOT NULL,
+
+[user_id] [int] NOT NULL
+
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TA_Users_Points] ADD CONSTRAINT [PK_TA_Users_Points] PRIMARY KEY CLUSTERED
+
+(
+
+[point_id] ASC,
+
+[user_id] ASC
+
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+GO
+
+
+
+
+
+SET ANSI_NULLS ON
+
+GO
+
+SET QUOTED_IDENTIFIER ON
+
+GO
+
+CREATE TABLE [dbo].[T_POINTS](
+
+[point_id] [int] IDENTITY(1,1) NOT NULL,
+
+[points] [int] NOT NULL,
+
+[Location] [varchar](256) NOT NULL,
+
+[Cooldown] [int] NOT NULL,
+
+[Description] [varchar](256) NOT NULL
+
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[T_POINTS] ADD PRIMARY KEY CLUSTERED
+
+(
+
+[point_id] ASC
+
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+GO
+
+
+
+
+
+SET ANSI_NULLS ON
+
+GO
