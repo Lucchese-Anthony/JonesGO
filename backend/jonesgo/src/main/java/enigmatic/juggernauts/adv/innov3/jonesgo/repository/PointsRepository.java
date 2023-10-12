@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PointsRepository extends JpaRepository<Points, Integer> {
-    List<Points> findByPorJ(String id);
 
 }

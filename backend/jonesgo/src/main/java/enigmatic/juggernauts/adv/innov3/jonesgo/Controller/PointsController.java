@@ -26,10 +26,10 @@ public class PointsController {
         return pointsRepository.findById(1).get();
     }
 
-    @GetMapping("/points/porj/{pOrj}")
-    public int getPoints(String pOrj) {
-        return pointsRepository.findById(userController.getUserFromEjNumber(pOrj).getUser_id()).get().getPoints();
-    }
+//    @GetMapping("/points/porj/{pOrj}")
+//    public int getPoints(String pOrj) {
+//        return pointsRepository.findById(userController.getUserFromEjNumber(pOrj).getUser_id()).get().getPoints();
+//    }
 
     // @GetMapping("/leaderboard")
     // use the GET_LEADERBOARDS routine in the database
