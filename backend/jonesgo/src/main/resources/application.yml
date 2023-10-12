@@ -1,0 +1,13 @@
+server:
+    port: 9091
+spring:
+  datasource:
+    url: jdbc:sqlserver://ejai.database.windows.net:1433;databaseName=JonesGo
+    username: CloudSAcdf5231d
+    password: EJAIuser1
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  hibernate:
+    connection:
+      url: jdbc:sqlserver://ejai.database.windows.net:1433;databaseName=JonesGo;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+  jpa:
+    show-sql: true
