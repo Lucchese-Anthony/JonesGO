@@ -14,6 +14,7 @@ public class UserPointsDTO {
 
         // set userID and pointID as foreign keys to the User and Points tables
         @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "point_user_id")
         private int userPointId;
         @Column(name = "user_id")
