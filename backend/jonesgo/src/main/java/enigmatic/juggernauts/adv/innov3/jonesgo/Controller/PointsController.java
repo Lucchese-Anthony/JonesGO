@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 public class PointsController {
 
-    UserController userController = new UserController();
     @Autowired
     private PointsRepository pointsRepository;
 

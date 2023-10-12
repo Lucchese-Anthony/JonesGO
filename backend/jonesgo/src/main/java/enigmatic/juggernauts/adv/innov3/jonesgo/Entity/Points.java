@@ -15,12 +15,16 @@ public class Points {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "point_id")
     private int pointId;
+    @Column(name = "points")
     private int points;
-    @Column(name = "Location")
-    private String location;
-    @Column(name = "Cooldown")
+    @Column(name = "latitude")
+    private String latitude;
+    @Column(name="longitude")
+    private String longitude;
+    @Column(name = "cooldown")
     private int cooldown;
-    @Column(name = "Description")
+    @Column(name = "description")
     private String description;
+
 
 }
