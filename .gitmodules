@@ -1,0 +1,3 @@
+[submodule "iOS/iOS/codefest-ios"]
+	path = iOS/iOS/codefest-ios
+	url = https://github.com/cwfaquin/codefest-ios.git
