@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0714B6522AD964CF006B6143 /* ARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0714B6512AD964CF006B6143 /* ARContentView.swift */; };
+		0714B6552AD96BB1006B6143 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714B6542AD96BB1006B6143 /* ARKit.framework */; platformFilter = ios; };
+		0714B6572AD96BBF006B6143 /* RealityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714B6562AD96BBF006B6143 /* RealityKit.framework */; };
+		074CBE442AD8232B000FF825 /* codefest_ejai_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE432AD8232B000FF825 /* codefest_ejai_iosApp.swift */; };
+		074CBE462AD8232B000FF825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE452AD8232B000FF825 /* ContentView.swift */; };
+		074CBE482AD8232B000FF825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074CBE472AD8232B000FF825 /* Assets.xcassets */; };
+		074CBE4C2AD8232B000FF825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074CBE4B2AD8232B000FF825 /* Preview Assets.xcassets */; };
+		074CBE552AD826DA000FF825 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE542AD826DA000FF825 /* MapView.swift */; };
+		074CBE5A2AD82D04000FF825 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE592AD82D04000FF825 /* LocationManager.swift */; };
+		074CBE622AD86775000FF825 /* bird-usd-reduced.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 074CBE612AD86775000FF825 /* bird-usd-reduced.usdz */; };
+		074CBE642AD867A8000FF825 /* statue-of-liberty.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 074CBE632AD867A8000FF825 /* statue-of-liberty.usdz */; };
+		074CBE662AD867C3000FF825 /* sculpture flat.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 074CBE652AD867C3000FF825 /* sculpture flat.usdz */; };
+		074CBE6C2AD87F74000FF825 /* ARDirectionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE6B2AD87F74000FF825 /* ARDirectionalView.swift */; };
+		074CBE6E2AD87F9D000FF825 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE6D2AD87F9D000FF825 /* ARViewContainer.swift */; };
+		074CBE722AD895BF000FF825 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE712AD895BF000FF825 /* ScoresView.swift */; };
+		074CBE742AD898DA000FF825 /* URLSesssionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE732AD898DA000FF825 /* URLSesssionManager.swift */; };
+		074CBE782AD89902000FF825 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE772AD89902000FF825 /* User.swift */; };
+		074CBE7A2AD89931000FF825 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE792AD89931000FF825 /* Point.swift */; };
+		074CBE7C2AD8993D000FF825 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE7B2AD8993D000FF825 /* Score.swift */; };
+		074CBE7E2AD89C8A000FF825 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE7D2AD89C8A000FF825 /* DataManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0714B6512AD964CF006B6143 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentView.swift; sourceTree = "<group>"; };
+		0714B6542AD96BB1006B6143 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.0.sdk/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
+		0714B6562AD96BBF006B6143 /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealityKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.0.sdk/System/Library/Frameworks/RealityKit.framework; sourceTree = DEVELOPER_DIR; };
+		074CBE402AD8232B000FF825 /* codefest-ejai-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "codefest-ejai-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		074CBE432AD8232B000FF825 /* codefest_ejai_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codefest_ejai_iosApp.swift; sourceTree = "<group>"; };
+		074CBE452AD8232B000FF825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		074CBE472AD8232B000FF825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		074CBE492AD8232B000FF825 /* codefest_ejai_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = codefest_ejai_ios.entitlements; sourceTree = "<group>"; };
+		074CBE4B2AD8232B000FF825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		074CBE542AD826DA000FF825 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		074CBE562AD82B91000FF825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		074CBE592AD82D04000FF825 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		074CBE612AD86775000FF825 /* bird-usd-reduced.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "bird-usd-reduced.usdz"; sourceTree = "<group>"; };
+		074CBE632AD867A8000FF825 /* statue-of-liberty.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "statue-of-liberty.usdz"; sourceTree = "<group>"; };
+		074CBE652AD867C3000FF825 /* sculpture flat.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "sculpture flat.usdz"; sourceTree = "<group>"; };
+		074CBE6B2AD87F74000FF825 /* ARDirectionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDirectionalView.swift; sourceTree = "<group>"; };
+		074CBE6D2AD87F9D000FF825 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		074CBE712AD895BF000FF825 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
+		074CBE732AD898DA000FF825 /* URLSesssionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSesssionManager.swift; sourceTree = "<group>"; };
+		074CBE772AD89902000FF825 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		074CBE792AD89931000FF825 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		074CBE7B2AD8993D000FF825 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		074CBE7D2AD89C8A000FF825 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		074CBE3D2AD8232B000FF825 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0714B6572AD96BBF006B6143 /* RealityKit.framework in Frameworks */,
+				0714B6552AD96BB1006B6143 /* ARKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0714B6532AD96BB1006B6143 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0714B6562AD96BBF006B6143 /* RealityKit.framework */,
+				0714B6542AD96BB1006B6143 /* ARKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		074CBE372AD8232B000FF825 = {
+			isa = PBXGroup;
+			children = (
+				074CBE422AD8232B000FF825 /* codefest-ejai-ios */,
+				074CBE412AD8232B000FF825 /* Products */,
+				0714B6532AD96BB1006B6143 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		074CBE412AD8232B000FF825 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				074CBE402AD8232B000FF825 /* codefest-ejai-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		074CBE422AD8232B000FF825 /* codefest-ejai-ios */ = {
+			isa = PBXGroup;
+			children = (
+				074CBE562AD82B91000FF825 /* Info.plist */,
+				074CBE432AD8232B000FF825 /* codefest_ejai_iosApp.swift */,
+				074CBE452AD8232B000FF825 /* ContentView.swift */,
+				074CBE7D2AD89C8A000FF825 /* DataManager.swift */,
+				074CBE712AD895BF000FF825 /* ScoresView.swift */,
+				074CBE542AD826DA000FF825 /* MapView.swift */,
+				074CBE592AD82D04000FF825 /* LocationManager.swift */,
+				074CBE732AD898DA000FF825 /* URLSesssionManager.swift */,
+				074CBE772AD89902000FF825 /* User.swift */,
+				074CBE792AD89931000FF825 /* Point.swift */,
+				074CBE7B2AD8993D000FF825 /* Score.swift */,
+				074CBE6B2AD87F74000FF825 /* ARDirectionalView.swift */,
+				0714B6512AD964CF006B6143 /* ARContentView.swift */,
+				074CBE6D2AD87F9D000FF825 /* ARViewContainer.swift */,
+				074CBE472AD8232B000FF825 /* Assets.xcassets */,
+				074CBE632AD867A8000FF825 /* statue-of-liberty.usdz */,
+				074CBE612AD86775000FF825 /* bird-usd-reduced.usdz */,
+				074CBE652AD867C3000FF825 /* sculpture flat.usdz */,
+				074CBE492AD8232B000FF825 /* codefest_ejai_ios.entitlements */,
+				074CBE4A2AD8232B000FF825 /* Preview Content */,
+			);
+			path = "codefest-ejai-ios";
+			sourceTree = "<group>";
+		};
+		074CBE4A2AD8232B000FF825 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				074CBE4B2AD8232B000FF825 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		074CBE3F2AD8232B000FF825 /* codefest-ejai-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 074CBE4F2AD8232B000FF825 /* Build configuration list for PBXNativeTarget "codefest-ejai-ios" */;
+			buildPhases = (
+				074CBE3C2AD8232B000FF825 /* Sources */,
+				074CBE3D2AD8232B000FF825 /* Frameworks */,
+				074CBE3E2AD8232B000FF825 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "codefest-ejai-ios";
+			productName = "codefest-ejai-ios";
+			productReference = 074CBE402AD8232B000FF825 /* codefest-ejai-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		074CBE382AD8232B000FF825 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					074CBE3F2AD8232B000FF825 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 074CBE3B2AD8232B000FF825 /* Build configuration list for PBXProject "codefest-ejai-ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 074CBE372AD8232B000FF825;
+			productRefGroup = 074CBE412AD8232B000FF825 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				074CBE3F2AD8232B000FF825 /* codefest-ejai-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		074CBE3E2AD8232B000FF825 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				074CBE622AD86775000FF825 /* bird-usd-reduced.usdz in Resources */,
+				074CBE4C2AD8232B000FF825 /* Preview Assets.xcassets in Resources */,
+				074CBE642AD867A8000FF825 /* statue-of-liberty.usdz in Resources */,
+				074CBE662AD867C3000FF825 /* sculpture flat.usdz in Resources */,
+				074CBE482AD8232B000FF825 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		074CBE3C2AD8232B000FF825 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0714B6522AD964CF006B6143 /* ARContentView.swift in Sources */,
+				074CBE742AD898DA000FF825 /* URLSesssionManager.swift in Sources */,
+				074CBE7E2AD89C8A000FF825 /* DataManager.swift in Sources */,
+				074CBE722AD895BF000FF825 /* ScoresView.swift in Sources */,
+				074CBE7A2AD89931000FF825 /* Point.swift in Sources */,
+				074CBE5A2AD82D04000FF825 /* LocationManager.swift in Sources */,
+				074CBE6C2AD87F74000FF825 /* ARDirectionalView.swift in Sources */,
+				074CBE462AD8232B000FF825 /* ContentView.swift in Sources */,
+				074CBE552AD826DA000FF825 /* MapView.swift in Sources */,
+				074CBE442AD8232B000FF825 /* codefest_ejai_iosApp.swift in Sources */,
+				074CBE782AD89902000FF825 /* User.swift in Sources */,
+				074CBE7C2AD8993D000FF825 /* Score.swift in Sources */,
+				074CBE6E2AD87F9D000FF825 /* ARViewContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		074CBE4D2AD8232B000FF825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		074CBE4E2AD8232B000FF825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		074CBE502AD8232B000FF825 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "codefest-ejai-ios/codefest_ejai_ios.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"codefest-ejai-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = 5MZ99JRZK3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "codefest-ejai-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JonesGO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need your camera to use the app.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need your steps info for you to earn additional points.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to use the app.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ej.codefest-ejai-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		074CBE512AD8232B000FF825 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "codefest-ejai-ios/codefest_ejai_ios.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"codefest-ejai-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = 5MZ99JRZK3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "codefest-ejai-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JonesGO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need your camera to use the app.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need your steps info for you to earn additional points.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to use the app.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ej.codefest-ejai-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		074CBE3B2AD8232B000FF825 /* Build configuration list for PBXProject "codefest-ejai-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				074CBE4D2AD8232B000FF825 /* Debug */,
+				074CBE4E2AD8232B000FF825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		074CBE4F2AD8232B000FF825 /* Build configuration list for PBXNativeTarget "codefest-ejai-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				074CBE502AD8232B000FF825 /* Debug */,
+				074CBE512AD8232B000FF825 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 074CBE382AD8232B000FF825 /* Project object */;
+}
