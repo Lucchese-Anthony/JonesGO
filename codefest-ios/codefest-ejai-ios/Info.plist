@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need your camera for AR</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need your location for this app</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We always need your location for this app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location while using the app</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>We need your calendar for this app</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We need your steps</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>Key</key>
+		<string>Value</string>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+</dict>
+</plist>
