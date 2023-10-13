@@ -8,13 +8,19 @@
 import Foundation
 
 struct User: Codable {
-    
-    var username: String
+
+    var userName: String
     var pnumber: String
+    var user_id: Int
+    
+    
 }
 
 extension User: Identifiable {
-    var id: String {
-        pnumber
+    var id: Int {
+        user_id
+    }
+    var score: Int {
+        Int.random(in: 10...100)
     }
 }

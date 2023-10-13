@@ -9,13 +9,13 @@ import Foundation
 
 struct Score: Codable {
     
-    var username: String
-    var pnumber: String
-    var total: Double 
+    var userPointId: Int
+    var userId: Int
+    var pointId: Int
 }
 
 extension Score: Identifiable {
-    var id: String {
-        pnumber
+    var id: Int {
+        userPointId
     }
 }

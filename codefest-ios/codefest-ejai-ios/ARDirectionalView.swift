@@ -11,17 +11,24 @@ import ARKit
 struct ARDirectionView: View {
     @Binding var isARViewShown: Bool
     @Environment(\.dismiss) private var dismiss
-    var destination: CLLocation
+    var destination: CLLocationCoordinate2D
 
     var body: some View {
         ARViewContainer(destination: destination)
             .edgesIgnoringSafeArea(.all)
             .overlay {
-                Button("", systemImage: "xmark") {
-                    dismiss()
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button("", systemImage: "xmark") {
+                            dismiss()
+                        }
+                        
+                        .frame(width: 50, height: 60)
+                        .foregroundColor(.indigo)
+                    }
+                    Spacer()
                 }
-                .foregroundColor(.indigo)
-                
             }
     }
 }

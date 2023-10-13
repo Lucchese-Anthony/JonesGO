@@ -19,14 +19,13 @@ struct DataManager {
         }
     }
     
-    static var user: User? {
+    static var users: [User] {
         get {
-            guard let data = defaults.data(forKey: #function) else { return nil }
-            return try? JSONDecoder().decode(User.self, from: data)
+            guard let data = defaults.data(forKey: #function) else { return [] }
+            return (try? JSONDecoder().decode([User].self, from: data)) ?? []
         }
         set {
-            guard 
-                let newValue = newValue,
+            guard
                 let data = try? JSONEncoder().encode(newValue)
             else {
                 return
@@ -35,10 +34,10 @@ struct DataManager {
         }
     }
     
-    static var pointsOfInterest: [PointOfInterest] {
+    static var pointsOfInterest: [Point] {
         get {
             guard let data = defaults.data(forKey: #function) else { return [] }
-            return (try? JSONDecoder().decode([PointOfInterest].self, from: data)) ?? []
+            return (try? JSONDecoder().decode([Point].self, from: data)) ?? []
         }
         set {
             guard

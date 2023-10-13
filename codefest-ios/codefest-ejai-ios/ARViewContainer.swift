@@ -9,7 +9,7 @@ import SwiftUI
 import ARKit
 
 struct ARViewContainer: UIViewRepresentable {
-    var destination: CLLocation
+    var destination: CLLocationCoordinate2D
     
     @Environment(LocationManager.self) private var locationManager
     
@@ -25,8 +25,10 @@ struct ARViewContainer: UIViewRepresentable {
 
         return arView
     }
-    
-    func updateUIView(_ uiView: ARSCNView, context: Context) {}
+        
+    func updateUIView(_ uiView: ARSCNView, context: Context) {
+        
+    }
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -56,7 +58,7 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-            let direction = bearing(from: parent.locationManager.lastKnownLocation ?? Location.building170, to: parent.destination.coordinate)
+            let direction = bearing(from: parent.locationManager.lastKnownLocation ?? Location.building170, to: parent.destination)
         
             let arrow = createArrow()
             arrow.eulerAngles.y = Float(-direction.degreesToRadians) // Negative because SceneKit's rotation is opposite.
@@ -66,7 +68,17 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         func session(_ session: ARSession, didFailWithError error: Error) {
-            print(error.localizedDescription)
+            session.pause()
+        }
+        
+        func sessionWasInterrupted(_ session: ARSession) {
+            session.pause()
+        }
+        
+    
+        
+        func session(_ session: ARSession, didChange geoTrackingStatus: ARGeoTrackingStatus) {
+            print(geoTrackingStatus.debugDescription)
         }
 
         

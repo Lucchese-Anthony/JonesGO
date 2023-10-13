@@ -21,7 +21,7 @@
 		074CBE722AD895BF000FF825 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE712AD895BF000FF825 /* ScoresView.swift */; };
 		074CBE742AD898DA000FF825 /* URLSesssionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE732AD898DA000FF825 /* URLSesssionManager.swift */; };
 		074CBE782AD89902000FF825 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE772AD89902000FF825 /* User.swift */; };
-		074CBE7A2AD89931000FF825 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE792AD89931000FF825 /* PointOfInterest.swift */; };
+		074CBE7A2AD89931000FF825 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE792AD89931000FF825 /* Point.swift */; };
 		074CBE7C2AD8993D000FF825 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE7B2AD8993D000FF825 /* Score.swift */; };
 		074CBE7E2AD89C8A000FF825 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074CBE7D2AD89C8A000FF825 /* DataManager.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +44,7 @@
 		074CBE712AD895BF000FF825 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		074CBE732AD898DA000FF825 /* URLSesssionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSesssionManager.swift; sourceTree = "<group>"; };
 		074CBE772AD89902000FF825 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		074CBE792AD89931000FF825 /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		074CBE792AD89931000FF825 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		074CBE7B2AD8993D000FF825 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		074CBE7D2AD89C8A000FF825 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +88,7 @@
 				074CBE592AD82D04000FF825 /* LocationManager.swift */,
 				074CBE732AD898DA000FF825 /* URLSesssionManager.swift */,
 				074CBE772AD89902000FF825 /* User.swift */,
-				074CBE792AD89931000FF825 /* PointOfInterest.swift */,
+				074CBE792AD89931000FF825 /* Point.swift */,
 				074CBE7B2AD8993D000FF825 /* Score.swift */,
 				074CBE6B2AD87F74000FF825 /* ARDirectionalView.swift */,
 				074CBE6D2AD87F9D000FF825 /* ARViewContainer.swift */,
@@ -186,7 +186,7 @@
 				074CBE742AD898DA000FF825 /* URLSesssionManager.swift in Sources */,
 				074CBE7E2AD89C8A000FF825 /* DataManager.swift in Sources */,
 				074CBE722AD895BF000FF825 /* ScoresView.swift in Sources */,
-				074CBE7A2AD89931000FF825 /* PointOfInterest.swift in Sources */,
+				074CBE7A2AD89931000FF825 /* Point.swift in Sources */,
 				074CBE5A2AD82D04000FF825 /* LocationManager.swift in Sources */,
 				074CBE6C2AD87F74000FF825 /* ARDirectionalView.swift in Sources */,
 				074CBE462AD8232B000FF825 /* ContentView.swift in Sources */,
@@ -330,6 +330,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "codefest-ejai-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JonesGO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your camera to use the app.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need your steps info for you to earn additional points.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to use the app.";
@@ -371,6 +372,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "codefest-ejai-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JonesGO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your camera to use the app.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need your steps info for you to earn additional points.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to use the app.";

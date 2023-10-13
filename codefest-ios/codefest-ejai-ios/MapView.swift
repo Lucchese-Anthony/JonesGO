@@ -11,63 +11,79 @@ import MapKit
 
 struct MapView: View {
     
-    @State var position: MapCameraPosition = .region(Location.region)
+    @State var position: MapCameraPosition = .automatic
     @State var route: MKRoute?
     @State private var showARView = false
-    @State var destination: CLLocation?
-
-    @State var points = [PointOfInterest]()
+    @State var destination: CLLocationCoordinate2D?
+    let session = URLSessionManager()
     
-    @State var region: MKCoordinateRegion = Location.region
+    @State var points = [Point]()
+    
     @Environment(LocationManager.self) private var locationManager
     
     
     
     var body: some View {
             Map(position: $position) {
-                if let route {
+                if let route = route {
                     MapPolyline(route.polyline)
-                        .stroke(.green, lineWidth: 7)
+                        .stroke(.cyan, lineWidth: 4)
                 }
-                    
-                Marker("Bldg 170", systemImage: "building", coordinate: Location.building170)
-                
-                Marker("Bldg 130", systemImage: "building", coordinate: Location.building130)
-                
-                Annotation("Quest", coordinate: Location.chalet) {
-                    ZStack {
-                        Circle()
-                            .foregroundStyle(.indigo.opacity(0.5))
-                            .frame(width: 80, height: 80)
-                        
-                        Button(action: {
-                            fetchRoute(from: locationManager.lastKnownLocation, to: Location.chalet)
+
+                ForEach(points) { point in
+                    Annotation(point.description, coordinate: CLLocationCoordinate2D(latitude: point.lat, longitude: point.long)) {
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(.cyan.opacity(0.25))
+                                .frame(width: 0, height: 40)
                             
-                        }, label: {
-                            Image(systemName: "pawprint")
-                                .symbolEffect(.variableColor)
-                                .padding()
-                                .foregroundStyle(.yellow)
-                                .background(.indigo)
-                                .clipShape(.circle)
-                        })
+                            Button {
+                                fetchRoute(from: locationManager.lastKnownLocation ?? Location.building130, to: point.location2D)
+                            } label: {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .symbolEffect(.variableColor)
+                                    .padding()
+                                    .foregroundStyle(.yellow)
+                                    .background(.indigo)
+                                    .clipShape(.circle)
+                                    .overlay(Circle().stroke(.yellow, lineWidth: 1.5))
+                            }
+                        }
                     }
                 }
+                
+                Marker("Bldg 130", systemImage: "building", coordinate: Location.building130)
+                    .tint(.cyan)
+                Marker("Bldg 170", systemImage: "building", coordinate: Location.building170)
+                    .tint(.cyan)
             }
-    
-            .mapStyle(.hybrid(elevation: .realistic))
-            
-            .mapControls {
-                MapUserLocationButton()
-                MapCompass()
-                MapPitchToggle()
+        
+        .onAppear {
+            points = DataManager.pointsOfInterest
+           // let region = Location.makeRegion(coordinates: points.compactMap { $0.location2D })
+            Task {
+                do {
+                    let points = try await session.makeRequest([Point].self, path: .points, method: .get, body: nil)
+                    self.points = points
+                    DataManager.pointsOfInterest = points
+                   // let region = Location.makeRegion(coordinates: points.compactMap { $0.location2D })
+                 //   position = .automatic
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
-            .overlay {
+        }
+        .mapControls {
+            MapCompass()
+            MapPitchToggle()
+        }
+        .overlay {
+            if destination != nil {
                 VStack {
                     Spacer()
                     Button {
                         Task {
-                            await getCameraPermission()                     
+                            await getCameraPermission()
                             showARView.toggle()
                         }
                     } label: {
@@ -78,18 +94,18 @@ struct MapView: View {
                             .buttonBorderShape(.capsule)
                     }
                 }
-                    .safeAreaInset(edge: .top) {
+                .safeAreaInset(edge: .top) {
                 }
-                
             }
-            .fullScreenCover(isPresented: $showARView, onDismiss: {
-                print("dismiss")
-            }, content: {
-                if let destination = destination {
-                    ARDirectionView(isARViewShown: $showARView, destination: destination)
-                        .environment(locationManager)
-                }
-            })
+        }
+        .fullScreenCover(isPresented: $showARView, onDismiss: {
+            print("dismiss")
+        }, content: {
+            if let destination = destination {
+                ARDirectionView(isARViewShown: $showARView, destination: destination)
+                    .environment(locationManager)
+            }
+        })
     }
     
     func getCameraPermission() async {
@@ -109,24 +125,24 @@ struct MapView: View {
             self.destination = nil
             return
         }
-            let request = MKDirections.Request()
-        let placemark: MKPlacemark
+        let request = MKDirections.Request()
+        let sourcePlacemark: MKPlacemark
         if let source {
-        placemark = MKPlacemark(coordinate: source)
+            sourcePlacemark = MKPlacemark(coordinate: source)
         } else {
-            placemark = locationManager.userLocation.item?.placemark ?? MKPlacemark(coordinate: Location.chalet)
+            sourcePlacemark = locationManager.userLocation.item?.placemark ?? MKPlacemark(coordinate: Location.chalet)
         }
-        self.destination = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
-        let sourceItem = MKMapItem(placemark: placemark)
+        self.destination = destination
+        let sourceItem = MKMapItem(placemark: sourcePlacemark)
         request.source = sourceItem
-            request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination))
-            request.transportType = .walking
-            Task {
-                let result = try? await MKDirections(request: request).calculate()
-                route = result?.routes.first
-                position = .region(MKCoordinateRegion(center: sourceItem.placemark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
-                getTravelTime()
-            }
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination))
+        request.transportType = .walking
+        Task {
+            let result = try? await MKDirections(request: request).calculate()
+            route = result?.routes.first
+            position = .region(MKCoordinateRegion(center: sourceItem.placemark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+            getTravelTime()
+        }
     }
     
     private func getTravelTime() {
@@ -134,7 +150,7 @@ struct MapView: View {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .abbreviated
         formatter.allowedUnits = [.hour, .minute]
-      //  travelTime = formatter.string(from: route.expectedTravelTime)
+        //  travelTime = formatter.string(from: route.expectedTravelTime)
     }
 }
 
@@ -153,14 +169,7 @@ enum Location {
     
     static let points = [CLLocationCoordinate2DMake(38.71649, -90.45047),CLLocationCoordinate2DMake(38.71654, -90.43674), CLLocationCoordinate2DMake(38.69989, -90.43713), CLLocationCoordinate2DMake(38.69969, -90.45057)]
     
-    
-    static let region: MKCoordinateRegion = {
-        let coordinates = [
-            CLLocationCoordinate2DMake(38.71649, -90.45047),
-            CLLocationCoordinate2DMake(38.71654, -90.43674),
-            CLLocationCoordinate2DMake(38.69989, -90.43713),
-            CLLocationCoordinate2DMake(38.69969, -90.45057)
-        ]
+    static func makeRegion(coordinates: [CLLocationCoordinate2D]) -> MKCoordinateRegion {
         
         // Calculate the center of the region
         let center = CLLocationCoordinate2D(
@@ -179,6 +188,17 @@ enum Location {
         )
         
         return MKCoordinateRegion(center: center, span: span)
+    }
+    
+    static let biggerRegion: MKCoordinateRegion = {
+        let coordinates = [
+            CLLocationCoordinate2DMake(38.71649, -90.45047),
+            CLLocationCoordinate2DMake(38.71654, -90.43674),
+            CLLocationCoordinate2DMake(38.69989, -90.43713),
+            CLLocationCoordinate2DMake(38.69969, -90.45057)
+        ]
+        
+        return makeRegion(coordinates: coordinates)
     }()
     
 }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct LeaderboardView: View {
     @State var showAlert: Bool = false
-    @State private var scores: [Score] = []
-    
+    @State private var users: [User] = []
     let session = URLSessionManager()
 
     var body: some View {
@@ -18,13 +17,6 @@ struct LeaderboardView: View {
             Text("LEADERBOARD")
                 .font(.largeTitle)
                 .padding(.bottom, 20)
-
-            Button("Update Random Score") {
-                if var randomTeam = scores.randomElement() {
-                    randomTeam.total += Double(Int.random(in: 10...100))
-                    scores.sort { $0.total > $1.total}
-                }
-            }
             .padding()
             .background(Color.blue)
             .foregroundColor(.white)
@@ -32,46 +24,56 @@ struct LeaderboardView: View {
             .padding(.bottom, 20)
 
             List {
-                ForEach(scores.indices, id: \.self) { index in
-                    ScoreRow(score: scores[index], rank: index + 1)
+                ForEach(users) { user in
+                    if let index = users.firstIndex(where: { _user in
+                        _user.id == user.id
+                    }) {
+                        ScoreRowView(user: user, rank: index + 1)
+                    } else {
+                        ScoreRowView(user: user, rank: nil)
+                    }
+                    
                 }
+
             }
         }
         .onAppear {
-            scores = DataManager.scores
+            users = DataManager.users.sorted { $0.score > $1.score }
         }
         .padding()
         .task {
             do {
-                let scores: [Score] = try await session.makeRequest(path: .scores, method: .get, body: nil)
-                print(scores)
-                DataManager.scores = scores
+                let users = try await session.makeRequest([User].self, path: .users, method: .get, body: nil)
+                self.users = users.sorted { $0.score > $1.score }
+                DataManager.users = users
+                print(users)
             } catch {
                 print(error.localizedDescription)
             }
         }
-        
     }
+    
 }
 
-struct ScoreRow: View {
-    var score: Score
-    var rank: Int
 
+struct ScoreRowView: View {
+    var user: User
+    var rank: Int?
+    
     @State private var animateRow: Bool = false
 
     var body: some View {
         HStack {
-            Text("\(rank). \(score.pnumber)")
+            Text("\(rank ?? 1). \(user.pnumber)")
                 .font(.headline)
             Spacer()
-            Text("\(score.total) pts")
+            Text("\(user.score) pts")
                 .font(.headline)
         }
         .opacity(animateRow ? 1 : 0)
         .offset(y: animateRow ? 0 : 20)
         .onAppear {
-            withAnimation(Animation.spring().delay(0.1 * Double(rank))) {
+            withAnimation(Animation.spring().delay(0.1 * Double(rank ?? 1))) {
                 animateRow = true
             }
         }
